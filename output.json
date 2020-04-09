@@ -1,0 +1,58 @@
+{
+    "roi": [
+        {
+            "chromosome": "chr9",
+            "start": "3",
+            "stop": "23",
+            "name": "Exon",
+            "index": "1",
+            "score": "60.0",
+            "strand": "+"
+        },
+        {
+            "chromosome": "chr9",
+            "start": "4",
+            "stop": "24",
+            "name": "Exon",
+            "index": "2",
+            "score": "60.0",
+            "strand": "+"
+        },
+        {
+            "chromosome": "chr9",
+            "start": "0",
+            "stop": "20",
+            "name": "Exon2",
+            "index": "3",
+            "score": "55.0",
+            "strand": "+"
+        },
+        {
+            "chromosome": "chr9",
+            "start": "3",
+            "stop": "23",
+            "name": "Exon2",
+            "index": "4",
+            "score": "60.0",
+            "strand": "+"
+        },
+        {
+            "chromosome": "chr9",
+            "start": "4",
+            "stop": "24",
+            "name": "Exon2",
+            "index": "5",
+            "score": "60.0",
+            "strand": "+"
+        },
+        {
+            "chromosome": "chr9",
+            "start": "3",
+            "stop": "23",
+            "name": "Exon2",
+            "index": "6",
+            "score": "60.0",
+            "strand": "-"
+        }
+    ]
+}

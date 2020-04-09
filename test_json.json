@@ -1,0 +1,22 @@
+{
+  "roi": [
+    {
+      "chromosome": "chr9",
+      "start": 1,
+      "stop": 30,
+      "name": "Exon",
+      "score": 0,
+      "strand": "+",
+      "full_region": "1"
+    },
+    {
+      "chromosome": "chr9",
+      "start": 0,
+      "stop": 30,
+      "name": "Exon2",
+      "score": 0,
+      "strand": "+",
+      "full_region": "1"
+    }
+  ]
+}
