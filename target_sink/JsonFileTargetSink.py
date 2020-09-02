@@ -14,25 +14,26 @@ class JsonFileTargetSink(TargetSink):
         self.index = 0
         self.data = {}
 
-
     def __enter__(self):
         print("writing json file: " + self.file_name)
         self.file = open(self.file_name + '.json', "w+")
-        self.data['roi'] = []
+        self.data['targets'] = []
         return self
 
-    def append(self, roi: Roi, target: Target, score: float):
-
-        self.data['roi'].append({
+    def append(self, roi: Roi, target: Target, mit_score: float, gc_score: float, doench_score: float):
+        self.data['targets'].append({
+            'target_id': str(self.next_index()),
             'chromosome': roi.chromosome,
             'start': str(target.start),
             'stop': str(target.stop),
-            'name': roi.name,
-            'index':  str(self.next_index()),
-            'score': str(score),
-            'strand': str(target.strand)
+            'mit_score': str(mit_score),
+            'gc_score': str(gc_score),
+            'doench_score': str(doench_score),
+            'strand': str(target.strand),
+            'sequence': str(target.sequence),
+            'name': str(roi.name)
         })
-
+        # print('json append', self.data['targets'])
 
     def next_index(self):
         index = self.index + 1
