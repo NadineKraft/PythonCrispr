@@ -36,7 +36,7 @@ class Entry:
             self.chromosome,
             self.start - frame_size,
             self.start,
-            self.name + "_downstream",
+            self.name,
             self.score,
             self.strand
         )
@@ -46,7 +46,7 @@ class Entry:
             self.chromosome,
             self.stop,
             self.stop + frame_size,
-            self.name + "_upstream",
+            self.name,
             self.score,
             self.strand
         )
@@ -79,7 +79,7 @@ class JsonFileRoiSource(RoiSource):
 
     def rois(self):
         json_data = json.load(self.file)
-        for json_object in json_data['roi']:
+        for json_object in json_data['rois']:
             entry = Entry.from_json_entry(json_object)
             yield from entry.to_rois(self.frame_size)
 
