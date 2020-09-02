@@ -1,13 +1,15 @@
+from abc import ABC
+
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-from fasta.FastaDictionary import FastaDictionary
+from fastadict.FastaDictionary import FastaDictionary
 from roi.Roi import Roi
 from target.Target import Target
 from target_index.TargetIndex import TargetIndex
 
 
-class FastaFileTargetIndex(TargetIndex):
+class FastaFileTargetIndex(TargetIndex, ABC):
 
     def __init__(self, file_name: str, dictionary: FastaDictionary):
         super().__init__()
@@ -69,14 +71,14 @@ def _yield_sorted_antisense_indexes(roi: Roi, sequence: str):
     yield from _yield_all_antisense_pam_indexes(roi, sequence, "CC")
 
 
-def _yield_all_sense_pam_indexes(roi: Roi, sequence: str, pam: int):
+def _yield_all_sense_pam_indexes(roi: Roi, sequence: str, pam: str):
     index = sequence.find(pam, roi.start + 21)
     while -1 < index < roi.stop:
         yield index
         index = sequence.find(pam, index + 1)
 
 
-def _yield_all_antisense_pam_indexes(roi: Roi, sequence: str, pam: int):
+def _yield_all_antisense_pam_indexes(roi: Roi, sequence: str, pam: str):
     index = sequence.find(pam, roi.start)
     while -1 < index < roi.stop - 23:
         yield index
